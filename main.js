@@ -1,62 +1,48 @@
-function saludar (){
-  alert(
-    "Bienvenido/a a Amatista " + nombre + " a continuación podrás elegir productos de nuestra tienda"
-  );
-}
+let nombre_producto = "";
+let precio_producto = "";
+let seleccion = "";
 
-function comprarProducto (){
-  producto = prompt ( 
-    "Elija el producto que desea comprar \n 1: Cheesecake \n 2: Lemon Pie \n 3: Chocotorta"
-    );
+while (seleccion.toUpperCase() != "ESC"){
+  let salida = "Seleccione el número de producto a agregar al carrito: \n\n";
 
-    if (producto ==="1") {
-      alert ("Elegiste la torta Cheesecake");
-    } else if (producto === "2"){
-      alert ("Elegiste la torta Lemon Pie");
-    } else if (producto ==="3"){
-      alert ("Elegiste la torta Chocotorta");
-    }
+  for (let producto of productos){
+    let producto_lista = new Producto (producto);
+    salida += "ID: " + producto.id + " - Nombre: " + producto_lista.nombre + " - Precio: $" + producto_lista.precio +  "\n";  
+  }
 
-    opcion = prompt (
-      "Vuelva a ingresar una opcion \n 1: seguir comprando \n 2: finalizar"
-      );
-}
+  let seleccion = prompt (salida);
 
-function finalizarCompra () {
-  if (producto === "1") {
-    alert ( 
-      "Usted eligio la torta Cheesecake por un monto final de " + cheesecake
-      );
-  } else if (producto === "2"){
-    alert (
-      "Usted eligio la torta Lemon Pie por un monto final de" + lemonPie
-    );
-  } else if (producto === "3"){
-    alert (
-      "Usted eligio la torta Chocotorta por un monto final de " + chocotorta
-    );
+  if ((seleccion === null) || (seleccion.toUpperCase() === "ESC")){
+    break;
+  }
+
+  let producto_encontrado = buscarProducto (seleccion);
+
+  if (producto_encontrado !=0){
+    let producto_lista = new Producto (producto_encontrado);
+    producto_lista.venderProducto ();
+    productos_seleccionados.push(producto_lista);
+    eliminarProducto (producto_encontrado.id);
+    console.log ("Agregaste al Carrito:" + producto_lista.nombre + " ($" + producto_lista.precio + ")");  
   }
 }
 
-let producto;
-let cheesecake = 1500;
-let lemonPie = 1600;
-let chocotorta = 1300;
-let nombre = prompt ("Ingrese su nombre");
+console.log (productos_seleccionados);
 
-saludar ();
-let opcion = prompt (
-  "Ingrese una opción: \n 1: comprar torta \n 2: finalizar compra \n 3: terminar"
-);
+let total_pagar= 0;
 
-while (opcion !== "3"){
-  if (opcion === "1"){
-    comprarProducto ();
+for (let producto of productos_seleccionados) {
+  console.log ("Producto: " + producto.nombre);
+  console.log ("Precio original: $" + producto.precio);
+  producto.aplicarIVA();
+  console.log ("Precio con IVA: $" + producto.precio);
+
+  if (productos_seleccionados.length > 2) {
+    producto.aplicarDescuento () ;
+    console.log ("Precio con Descuento: $" + producto.precio);
   }
-  if (opcion === "2"){
-    finalizarCompra ();
-    opcion = "3";
-  }
+
+  total_pagar += producto.precio;
 }
 
-alert ("Gracias por su compra");
+alert ("El Total a Pagar es: $" + total_pagar);
