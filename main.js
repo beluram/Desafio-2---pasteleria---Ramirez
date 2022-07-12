@@ -1,48 +1,95 @@
-let nombre_producto = "";
-let precio_producto = "";
-let seleccion = "";
+const productos = [
+  {
+    id: 1,
+    nombre: 'Lemon Pie',
+    valor: 1500,
+    cantidad: 5,
+    imageURL: 'https://www.annarecetasfaciles.com/files/lemon-pie-scaled.jpg'
+  },
+  {
+    id: 2,
+    nombre: 'Chocotorta',
+    valor: 1400,
+    cantidad: 5,
+    imageURL: 'https://chocorecetas.com/wp-content/uploads/2020/09/chocotorta-sin-horno-600x450.jpg'
+  },
+  {
+    id: 3,
+    nombre: 'Pastafrola',
+    valor: 1200,
+    cantidad: 5,
+    imageURL: 'https://cuk-it.com/wp-content/uploads/2020/10/thumb02-8-1024x576.jpg'
+  },
+  {
+    id: 4,
+    nombre: 'Rogel',
+    valor: 1500,
+    cantidad: 5,
+    imageURL: 'https://www.paulinacocina.net/wp-content/uploads/2021/11/torta-rogel.jpg'
+  },
+];
 
-while (seleccion.toUpperCase() != "ESC"){
-  let salida = "Seleccione el número de producto a agregar al carrito: \n\n";
+const carrito = []
 
-  for (let producto of productos){
-    let producto_lista = new Producto (producto);
-    salida += "ID: " + producto.id + " - Nombre: " + producto_lista.nombre + " - Precio: $" + producto_lista.precio +  "\n";  
-  }
+const contenedor = document.getElementById ('contenedor');
+const contenedorCarrito = document.getElementById ('carrito');
 
-  let seleccion = prompt (salida);
+const renderProducts = (products, target) => {
+  let acumulador = '';
 
-  if ((seleccion === null) || (seleccion.toUpperCase() === "ESC")){
-    break;
-  }
+  products.map(product => {
+    acumulador += `
+    <div class="card m-2" style="width: 18rem;">
+      <img src="${product.imageURL}" class="card-img-top" alt="${product.nombre}">
+      <div class="card-body">
+          <h5 class="card-title">${product.nombre}</h5>
+          <p class="card-text">Cantidad: ${product.cantidad}</p>
+          <p class="card-text">Precio: $ ${product.valor}</p>
+          <button ref=${product.id} class="btn btn-primary button">Comprar</a>
+      </div>
+    </div>
+    `
+  })
 
-  let producto_encontrado = buscarProducto (seleccion);
+  target.innerHTML = acumulador;
 
-  if (producto_encontrado !=0){
-    let producto_lista = new Producto (producto_encontrado);
-    producto_lista.venderProducto ();
-    productos_seleccionados.push(producto_lista);
-    eliminarProducto (producto_encontrado.id);
-    console.log ("Agregaste al Carrito:" + producto_lista.nombre + " ($" + producto_lista.precio + ")");  
-  }
+  const buttons = document.querySelectorAll ('.button');
+  buttons.forEach(button => button.addEventListener('click', handleClick))
 }
 
-console.log (productos_seleccionados);
+const handleClick = (event) =>{
+  const id = parseInt(event.target.getAttribute('ref'));
+  const product = productos.find(producto => producto.id === id);
+  alert ('Compraste ' + product.nombre + 'por $' + product.valor);  
 
-let total_pagar= 0;
-
-for (let producto of productos_seleccionados) {
-  console.log ("Producto: " + producto.nombre);
-  console.log ("Precio original: $" + producto.precio);
-  producto.aplicarIVA();
-  console.log ("Precio con IVA: $" + producto.precio);
-
-  if (productos_seleccionados.length > 2) {
-    producto.aplicarDescuento () ;
-    console.log ("Precio con Descuento: $" + producto.precio);
+  if (carrito.some(el =>el.id === product.id)){
+    const posicion = carrito.findIndex(el => el.id === product.id)
+    carrito [posicion].cantidad = carrito [posicion].cantidad + 1;
+  } else{
+    carrito.push({
+      id: product.id,
+      nombre: product.nombre,
+      valor: product.valor,
+      cantidad: 1,
+      imageURL: product.imageURL,
+    })
   }
+  
+  renderProducts(carrito, contenedorCarrito);
 
-  total_pagar += producto.precio;
 }
 
-alert ("El Total a Pagar es: $" + total_pagar);
+const buscador = (array, texto) =>{
+  return array.filter(producto => producto.nombre.toLowerCase().includes(texto.toLowerCase()))
+}
+
+const form = document.getElementById('form');
+const input = document.getElementById('searchInput');
+
+const buscar = (e) =>{
+  e.preventDefault ();
+  renderProducts(buscador(productos,input.value), contenedor)
+}
+
+input.addEventListener('input', buscar);
+renderProducts (productos, contenedor);
