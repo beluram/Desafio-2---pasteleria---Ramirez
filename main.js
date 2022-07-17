@@ -39,13 +39,13 @@ const renderProducts = (products, target) => {
 
   products.map(product => {
     acumulador += `
-    <div class="card m-2" style="width: 18rem;">
+    <div class="card m-2 text-center" style="width: 18rem;">
       <img src="${product.imageURL}" class="card-img-top" alt="${product.nombre}">
       <div class="card-body">
-          <h5 class="card-title">${product.nombre}</h5>
+          <h4 class="card-title fw-bold">${product.nombre}</h4>
           <p class="card-text">Cantidad: ${product.cantidad}</p>
           <p class="card-text">Precio: $ ${product.valor}</p>
-          <button ref=${product.id} class="btn btn-primary button">Comprar</a>
+          <button ref=${product.id} class="btn btn-outline-secondary button">Comprar</a>
       </div>
     </div>
     `
