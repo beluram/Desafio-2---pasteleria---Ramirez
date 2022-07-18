@@ -29,67 +29,63 @@ const productos = [
   },
 ];
 
-const carrito = []
+/// localstorage ////
+function obtenerProductosLS(){
+  return JSON.parse(localStorage.getItem("productos")) || [];
+}
 
-const contenedor = document.getElementById ('contenedor');
-const contenedorCarrito = document.getElementById ('carrito');
+function guardarProductosLS(productos){
+  localStorage.setItem("productos", JSON.stringify(productos));
+}
 
-const renderProducts = (products, target) => {
-  let acumulador = '';
+function obtenerProductosCarrito(){
+  return JSON.parse(localStorage.getItem("carrito")) || [];
+}
 
-  products.map(product => {
-    acumulador += `
+function guardarProductosCarrito(productos){
+  localStorage.setItem("carrito", JSON.stringify(productos));
+}
+
+function renderProductosHTML(){
+  let productos = obtenerProductosLS();
+  let contenido = "";
+
+ //// CARRITO Y CARDS CON PRODUCTOS//// 
+  for (let producto of productos){
+    contenido += `
     <div class="card m-2 text-center" style="width: 18rem;">
-      <img src="${product.imageURL}" class="card-img-top" alt="${product.nombre}">
+      <img src="${producto.imageURL}" class="card-img-top" alt="${producto.nombre}">
       <div class="card-body">
-          <h4 class="card-title fw-bold">${product.nombre}</h4>
-          <p class="card-text">Cantidad: ${product.cantidad}</p>
-          <p class="card-text">Precio: $ ${product.valor}</p>
-          <button ref=${product.id} class="btn btn-outline-secondary button">Comprar</a>
+          <h4 class="card-title fw-bold">${producto.nombre}</h4>
+          <p class="card-text">Cantidad: ${producto.cantidad}</p>
+          <p class="card-text">Precio: $ ${producto.valor}</p>
+          <button ref=${producto.id} class="btn btn_purple button">Comprar</a>
       </div>
     </div>
     `
-  })
-
-  target.innerHTML = acumulador;
-
-  const buttons = document.querySelectorAll ('.button');
-  buttons.forEach(button => button.addEventListener('click', handleClick))
-}
-
-const handleClick = (event) =>{
-  const id = parseInt(event.target.getAttribute('ref'));
-  const product = productos.find(producto => producto.id === id);
-  alert ('Compraste ' + product.nombre + 'por $' + product.valor);  
-
-  if (carrito.some(el =>el.id === product.id)){
-    const posicion = carrito.findIndex(el => el.id === product.id)
-    carrito [posicion].cantidad = carrito [posicion].cantidad + 1;
-  } else{
-    carrito.push({
-      id: product.id,
-      nombre: product.nombre,
-      valor: product.valor,
-      cantidad: 1,
-      imageURL: product.imageURL,
-    })
   }
-  
-  renderProducts(carrito, contenedorCarrito);
 
+  document.getElementById("productos").innerHTML = contenido;
 }
 
-const buscador = (array, texto) =>{
-  return array.filter(producto => producto.nombre.toLowerCase().includes(texto.toLowerCase()))
+function renderProductosDOM(){
+};
+
+function actualizarBotonCarrito(){
+    let productos = obtenerProductosCarrito();
+    let contenido = `<button type="button" class="btn btn position-relative">
+    <img src="./assets/img/carro.png" width="24"><span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span></button>`;
+    let total = 0;
+
+    /*if (productos.length > 0){
+      for (let producto of productos){
+        total += producto.cantidad;
+      }
+    }*/
+
+    document.getElementById("boton_carrito").innerHTML = contenido;
 }
 
-const form = document.getElementById('form');
-const input = document.getElementById('searchInput');
-
-const buscar = (e) =>{
-  e.preventDefault ();
-  renderProducts(buscador(productos,input.value), contenedor)
-}
-
-input.addEventListener('input', buscar);
-renderProducts (productos, contenedor);
+guardarProductosLS(productos);
+actualizarBotonCarrito();
+renderProductosHTML();

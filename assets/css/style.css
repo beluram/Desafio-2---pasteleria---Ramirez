@@ -5,7 +5,11 @@
     font-family: 'Mukta', sans-serif;
     list-style: none; 
 }
+.btn_purple{
+    color: black;
+    background-color: rgb(235, 214, 255);
+}
 
 footer {
-    background-color: #e4c5c4;
+    background-color: #fde4e3;
 }
