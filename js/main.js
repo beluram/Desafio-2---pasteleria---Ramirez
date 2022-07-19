@@ -12,7 +12,7 @@ function renderProductosHTML(){
           <h4 class="card-title fw-bold">${producto.nombre}</h4>
           <p class="card-text">Cantidad: ${producto.cantidad}</p>
           <p class="card-text">Precio: $ ${producto.valor}</p>
-          <button ref=${producto.id} class="btn btn_purple button" onclick="agregarCarrito(${producto.id})">Comprar</a>
+          <button ref=${producto.id} class="btn btn_purple button" title="Agregar al Carrito" onclick="agregarCarrito(${producto.id})">Comprar</a>
       </div>
     </div>
     `
@@ -24,14 +24,6 @@ function renderProductosHTML(){
 function renderProductosDOM(){
 };
 
-function agregarCarrito(id){
-  let producto = buscarProducto(id);
-  let productos_carrito = obtenerProductosCarrito();
-  producto.cantidad = 1;
-  productos_carrito.push(producto);
-  guardarProductosCarrito(productos_carrito);
-  actualizarBotonCarrito();
-}
 
 guardarProductosLS(productos);
 actualizarBotonCarrito();
