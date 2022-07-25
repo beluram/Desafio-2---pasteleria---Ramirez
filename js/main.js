@@ -3,7 +3,7 @@ function renderProductosHTML(){
   let productos = obtenerProductosLS();
   let contenido = "";
 
- //// CARRITO Y CARDS CON PRODUCTOS//// 
+ //// CARDS CON PRODUCTOS//// 
   for (let producto of productos){
     contenido += `
     <div class="card m-2 text-center" style="width: 18rem;">

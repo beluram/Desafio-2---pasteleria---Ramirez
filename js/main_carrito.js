@@ -1,3 +1,15 @@
+///Alert compra exitosa
+function compraExitosa(){
+  Swal.fire({
+    position: 'top-end',
+    icon: 'success',
+    title: 'Compra Exitosa',
+    showConfirmButton: false,
+    timer: 1500
+  })
+}
+
+/// Sumar productos al carrito 
 function renderProductosCarrito() {
   let productos = obtenerProductosCarrito();
   let contenido = `<p class="alert alert_purple text-center" role="alert">No se encontraron productos en el carrito.</p>`
@@ -23,14 +35,14 @@ function renderProductosCarrito() {
     <td>&nbsp;</td>
     <td>Total a Pagar</td>
     <td class="align-middle"><b>$${total}</b></td>
-    <td class="text-end"><a href="#" class="btn btn_purple">Finalizar Compra</a></td>
+    <td class="text-end"><a href="#" class="btn btn_purple" onclick="compraExitosa()">Finalizar Compra</a></td>
     </tr>`;
 
     contenido += `</table>`;
+    
   }
-
-
   document.getElementById("productos_carrito").innerHTML = contenido;
+  
 }
 
 actualizarBotonCarrito();
