@@ -21,10 +21,28 @@ function renderProductosHTML(){
   document.getElementById("productos").innerHTML = contenido;
 }
 
+
 function renderProductosDOM(){
 };
-
 
 guardarProductosLS(productos);
 actualizarBotonCarrito();
 renderProductosHTML();
+
+//buscador en la navbar
+
+/*const buscador = (array, texto) =>{
+  return array.filter(producto => producto.nombre.toLowerCase().includes(texto.toLowerCase()))
+}
+const form = document.getElementById('form');
+const input = document.getElementById ('searchInput');
+
+const buscar = (e) => {
+  e.preventDefault();
+
+  renderProductosDOM (buscador(productos, input.value), productos);
+}
+
+input.addEventListener('input', buscar) */
+
+
