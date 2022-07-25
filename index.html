@@ -14,73 +14,75 @@
 
 <body>
     <!--Navbar-->
-        <header class="container py-3 sticky-top bg-white">
-            <div class="row">
-                <div class="col-md-12">
-                    <nav class="navbar navbar-expand-lg bg-white">
-                        <div class="container-fluid">
-                            <nav class="navbar bg-white">
-                                <div class="container">
-                                    <a class="navbar-brand" href="index.html">
-                                        <img src="./assets/img/logo.jpg" alt="logo" width="170" height="100">
+    <header class="container py-3 sticky-top bg-white">
+        <div class="row">
+            <div class="col-md-12">
+                <nav class="navbar navbar-expand-lg bg-white">
+                    <div class="container-fluid">
+                        <nav class="navbar bg-white">
+                            <div class="container">
+                                <a class="navbar-brand" href="index.html">
+                                    <img src="./assets/img/logo.jpg" alt="logo" width="170" height="100">
+                                </a>
+                            </div>
+                        </nav>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Contactanos</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        Productos
                                     </a>
-                                </div>
-                            </nav>
-                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                                aria-expanded="false" aria-label="Toggle navigation">
-                                <span class="navbar-toggler-icon"></span>
-                            </button>
-                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                                    <li class="nav-item">
-                                        <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#">Contactanos</a>
-                                    </li>
-                                    <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                            data-bs-toggle="dropdown" aria-expanded="false">
-                                            Productos
-                                        </a>
-                                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                            <li><a class="dropdown-item" href="#">Tortas</a></li>
-                                            <li><a class="dropdown-item" href="#">Desayunos y meriendas</a></li>
-                                            <li><a class="dropdown-item" href="#">Pastelería sin TACC</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="./usuario.html">Iniciar Sesión</a>
-                                    </li>
-                                </ul>
-                                <form class="d-flex" role="search" id="form">
-                                    <input class="form-control me-2" id="searchInput" type="search" placeholder="Search"
-                                        aria-label="Search">
-                                    <button class="btn btn_purple" type="submit">Buscar</button>
-                                </form>
-                                <div>
-                                    <a href="carrito.html" id="boton_carrito" title="Ir al Carrito"></a>
-                                </div>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <li><a class="dropdown-item" href="index.html#tortas">Tortas</a></li>
+                                        <li><a class="dropdown-item" href="#">Desayunos y meriendas</a></li>
+                                        <li><a class="dropdown-item" href="#">Pastelería sin TACC</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="./usuario.html">Iniciar Sesión</a>
+                                </li>
+                            </ul>
+                            <form class="d-flex" role="search" id="form">
+                                <input class="form-control me-2" id="searchInput" type="search" placeholder="Search"
+                                    aria-label="Search">
+                                <button class="btn btn_purple" type="submit">Buscar</button>
+                            </form>
+                            <div>
+                                <a href="carrito.html" id="boton_carrito" title="Ir al Carrito"></a>
                             </div>
                         </div>
-                    </nav>
-                </div>
+                    </div>
+                </nav>
             </div>
-        </header>
+        </div>
+    </header>
     <!---Productos para agregar al carrito-->
     <main>
         <!---Banner principal-->
         <img src="./assets/img/banner.jpg" class=" imagen_principal img-fluid rounded mx-auto d-block"
             alt="Imagen principal">
         <!---Titulo de categoría de producto-->
-        
+
 
         <!---Contenedor principal de los productos-->
-        <div class="container py-5">
-            <h1 class="titulos text-center">TORTAS</h1>
-            <div id="productos" class="d-flex flex-wrap flex-row"></div>
-        </div>
+        <section id="tortas">
+            <div class="container py-5">
+                <h1 class="titulos text-center">TORTAS</h1>
+                <div id="productos" class="d-flex flex-wrap flex-row"></div>
+            </div>
+        </section>
 
     </main>
     <!---footer-->
@@ -113,7 +115,7 @@
     <script src="./js/main.js"></script>
 
     <!---Librerias-->
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </body>
 
 </html>
