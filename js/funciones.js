@@ -45,6 +45,7 @@ function agregarCarrito(id){
 
   guardarProductosCarrito(productos_carrito);
   actualizarBotonCarrito();
+
 }
 
 function eliminarCarrito(id){
