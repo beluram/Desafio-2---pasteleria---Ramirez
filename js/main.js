@@ -1,5 +1,5 @@
 
-function renderProductosHTML(){
+/*function renderProductosHTML(){
   let productos = obtenerProductosLS();
   let contenido = "";
 
@@ -24,7 +24,8 @@ for (let producto of productos){
 
 function renderProductosDOM(){
 };
+*/
 
 guardarProductosLS(productos);
 actualizarBotonCarrito();
-renderProductosHTML();
+///renderProductosHTML();

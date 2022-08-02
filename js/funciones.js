@@ -31,14 +31,14 @@ function vaciarCarrito(){
   renderProductosCarrito();
 }
 
-function agregarCarrito(id){
+
+function agregarCarrito(producto){
   let productos_carrito = obtenerProductosCarrito();
-  let pos = productos_carrito.findIndex(x => x.id == id)
+  let pos = productos_carrito.findIndex(x => x.id == producto.id)
 
   if(pos > -1){
     productos_carrito[pos].cantidad += 1;
   }else {
-    let producto = buscarProducto(id);
     producto.cantidad = 1;
     productos_carrito.push(producto);
   }
