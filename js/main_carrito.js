@@ -47,3 +47,4 @@ function renderProductosCarrito() {
 
 actualizarBotonCarrito();
 renderProductosCarrito();
+
