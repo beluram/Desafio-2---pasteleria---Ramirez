@@ -19,7 +19,13 @@ footer {
     background-color: rgb(235, 214, 255);
 }
 
-.imagenProducto {
+.card-header{
+    font-size: 20px;
+}
+
+@media (min-width: 1210px) {
+    .imagenProducto {
+    margin: 5px;
     width: 230px;
     height: 200px;
     border-radius: 5px;
@@ -34,8 +40,23 @@ footer {
     margin: 10px;
     border: #fde4e3;
 }
+}
 
+@media (max-width: 1210px) {
+    .imagenProducto {
+    margin: 5px;
+    width: 100px;
+    height: 80px;
+    border-radius: 5px;
+}
 
-.card-header{
-    font-size: 20px;
+.botonAgregar {
+    width: 90px;
+    height: 50px;
+    color: black;
+    background-color: rgb(235, 214, 255);
+    border-radius: 5px;
+    margin: 10px;
+    border: #fde4e3;
+}
 }

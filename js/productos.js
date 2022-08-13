@@ -11,8 +11,8 @@ let contenido = "";
 fetch("js/productos.json")
   .then((response) => response.json())
   .then((data) => {
-    const productos = document.getElementById("productos");
-    data.forEach(prod => {
+      const productos = document.getElementById("productos");
+      data.forEach(prod => {
       let columna = document.createElement("div");
       columna.className = "col-md-3";
       let div_padre = document.createElement("div");
@@ -48,6 +48,5 @@ fetch("js/productos.json")
       columna.appendChild(div_padre);
       productos.appendChild(columna);
 
-    });
-
-  })
+      });
+      })
