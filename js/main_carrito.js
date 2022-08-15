@@ -23,7 +23,7 @@ function renderProductosCarrito() {
       let valor = producto.valor * producto.cantidad;
       contenido += ` <tr>
         <td><img src="${producto.imagen}" alt="${producto.nombre}" width="64"></td>
-        <td class="align-middle">${producto.nombre} X ${producto.cantidad}</td>
+        <td class="align-middle">${producto.nombre}</td>
         <td class="align-middle"><a href="#" class="btn btn_purple" title="Eliminar Producto" onclick="disminuirCantidadItem(${producto.id})">-</a><b>${producto.cantidad}</b><a href="#" class="btn btn_purple" title = "Agregar Producto" onclick="incrementarCantidadItem(${producto.id})">+</a></td>
         <td class="align-middle"><b>$${valor}</b></td>        
         <td class="text-end"><a href="#" class="btn btn button" onclick="eliminarItem(${producto.id})"><img src="assets/img/delete.png" width="24"></a> </td>

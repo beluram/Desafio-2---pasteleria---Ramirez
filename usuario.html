@@ -65,34 +65,44 @@
         </div>
     </header>
     <!----Formulario para crear usuario o iniciar sesión-->
-    <main>
-        <div class="container m-5 ">
-            <div class="row">
-                <div class="col-md-6">
-                    <h5>Ingrese sus datos:</h5>
-                    <form>
-                        <div class="mb-3">
-                            <label for="nombre" class="form-label">Nombre</label>
-                            <input type="text" class="form-control" id="nombre">
-                        </div>
-                        <div class="mb-3">
-                            <label for="email" class="form-label">Email</label>
-                            <input type="text" class="form-control" id="email">
-                        </div>
-                        <div class="mb-3">
-                            <label for="cliente" class="form-laber">¿Es cliente?</label>
-                            <select class="form-control" id="cliente">
-                                <option value="SI">Si</option>
-                                <option value="NO">No</option>
-                            </select>
-                        </div>
-                        <button type="button" id="enviarForm" class="btn btn_purple">Enviar</button>
-                    </form>
-                    <div>
-                        <div id="resultado" class="col-md-6 m-5"></div>
+    <main class="cuenta">
+        <div id="iniciar_sesion" class="row justify-content-center">
+            <section class="col-4" id="mi_sesion">
+                <h2> Iniciar sesión</h2>
+                <form id="consulta_clientes">
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label" >Correo Electrónico</label>
+                        <input type="email" class="form-control" id="email_registrado" aria-describedby="emailHelp">
                     </div>
-                </div>
-            </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+                        <input type="password" class="form-control" id="consulta_contraseña">
+                    </div>
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="recordarme">
+                        <label class="form-check-label" for="recordarme">Recordarme</label>
+                    </div>
+                    <button type="submit" id="btn_inicio_sesion" class="btn" onclick="loguearme()">Iniciar sesión</button>
+                    <P id="mensaje_validacion"></p>
+                </form>
+            </section>
+            <section class="col-4" id="registrarme">
+                <h2>Registrarme</h2>
+                <form id="alta_clientes" class="mb-3">
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label" >Correo Electrónico</label>
+                        <input type="email" class="form-control" id="email_registro" aria-describedby="emailHelp">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+                        <input type="password" class="form-control" id="contraseña">
+                    </div>
+                    <div>
+                        <button type="submit" class="btn" onclick="registrarme()">Registrarme</button>
+                        <p id="mensaje_registro"></p>
+                    </div>
+                </form>
+            </section>
         </div>
     </main>
 
