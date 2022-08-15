@@ -111,7 +111,7 @@ function loguearme(){
 				mensajeDeValidacion.innerHTML = `El nombre de usuario y/o la contraseña que ingresaste son incorrectos.`
 			} else if(mailConsulta === mailAValidar && contraseñaAValidar === contraseñaConsulta) {
 				setTimeout(() => {
-					window.location ="./carrito.html"
+					window.location ="./pages/carrito.html"
 				}, 100);
 			}
 		}
