@@ -6,8 +6,10 @@ function obtenerProductosLS() {
 function guardarProductosLS(productos) {
     localStorage.setItem("productos", JSON.stringify(productos));
 }
+// funcion para que se actualize el carrito con los productos
+actualizarBotonCarrito();
 
-
+/// tarjetas filtradas por categoría
 let contenido = "";
 
 fetch("js/productos.json")
