@@ -37,7 +37,7 @@ fetch("js/productos.json")
             botonComprar.className = "botonAgregar";
             botonComprar.textContent = "Agregar al Carrito";
             botonComprar.onclick = function () {
-                agregarCarrito(prod)
+                agregarCarritoHome(prod)
             };
 
 

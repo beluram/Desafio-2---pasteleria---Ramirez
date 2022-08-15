@@ -16,7 +16,7 @@ fetch("js/productos.json")
         const productos = document.getElementById("productos");
         data.forEach(prod => {
             if (prod.categoria == 1){
-                let columna = document.createElement("div");
+            let columna = document.createElement("div");
             columna.className = "col-md-3";
             let div_padre = document.createElement("div");
             div_padre.className = "card m-2";
@@ -37,7 +37,7 @@ fetch("js/productos.json")
             botonComprar.className = "botonAgregar";
             botonComprar.textContent = "Agregar al Carrito";
             botonComprar.onclick = function () {
-                agregarCarrito(prod)
+                agregarCarritoHome(prod)
             };
 
 
