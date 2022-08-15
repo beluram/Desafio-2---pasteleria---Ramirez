@@ -24,8 +24,9 @@ function renderProductosCarrito() {
       contenido += ` <tr>
         <td><img src="${producto.imagen}" alt="${producto.nombre}" width="64"></td>
         <td class="align-middle">${producto.nombre} X ${producto.cantidad}</td>
-        <td class="align-middle"><b>$${valor}</b></td>
-        <td class="text-end"><a href="#" class="btn btn button" onclick="eliminarCarrito(${producto.id})" ><img src="assets/img/delete.png" width="24"></a> </td>
+        <td class="align-middle"><a href="#" class="btn btn_purple" title="Eliminar Producto" onclick="disminuirCantidadItem(${producto.id})">-</a><b>${producto.cantidad}</b><a href="#" class="btn btn_purple" title = "Agregar Producto" onclick="incrementarCantidadItem(${producto.id})">+</a></td>
+        <td class="align-middle"><b>$${valor}</b></td>        
+        <td class="text-end"><a href="#" class="btn btn button" onclick="eliminarItem(${producto.id})"><img src="assets/img/delete.png" width="24"></a> </td>
         </tr>`;
         total += valor;
 
@@ -34,6 +35,7 @@ function renderProductosCarrito() {
     contenido += `<tr>
     <td>&nbsp;</td>
     <td>Total a Pagar</td>
+    <td>&nbsp;</td>
     <td class="align-middle"><b>$${total}</b></td>
     <td class="text-end"><a href="#" class="btn btn_purple" onclick="compraExitosa()">Finalizar Compra</a></td>
     </tr>`;

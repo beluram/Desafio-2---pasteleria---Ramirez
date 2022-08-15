@@ -19,9 +19,9 @@ fetch("js/productos.json")
                 let columna = document.createElement("div");
             columna.className = "col-md-3";
             let div_padre = document.createElement("div");
-            div_padre.className = "card m-2 container-fluid";
+            div_padre.className = "card m-2";
             let div_hijo1 = document.createElement("div");
-            div_hijo1.className = "card-header";
+            div_hijo1.className = "card-header card_purple";
             let div_hijo2 = document.createElement("div");
             div_hijo2.className = "card-body";
 
