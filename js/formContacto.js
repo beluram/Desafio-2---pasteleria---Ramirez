@@ -8,8 +8,6 @@ function enviarFormulario(e) {
 
     e.preventDefault();
 
-    ///btnFormulario.value = 'Enviando...'
-    console.log(document.getElementById('nombre_form'))
     let nombre = document.getElementById('nombre_form').value
     let apellido = document.getElementById('apellido_form').value
     let telefono = document.getElementById('telefono_form').value
