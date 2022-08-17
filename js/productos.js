@@ -23,7 +23,7 @@ fetch("js/productos.json")
       div_hijo2.className = "card-body";
 
       let imagen = document.createElement("img");
-      imagen.src = "/img/" + prod.imagen;
+      imagen.src = prod.imagen;
       imagen.alt = prod.nombre;
       imagen.className = "imagenProducto"
 
