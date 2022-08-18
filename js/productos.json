@@ -3,77 +3,77 @@
         "categoria" : "1",
         "nombre": "Cheese Cake",
         "valor": 1500,
-        "imagen": "../assets/img/cheesecake_frutos_rojos.jpg"
+        "imagen": "./assets/img/cheesecake_frutos_rojos.jpg"
     },
     {
         "id": 2,
         "categoria" : "1",
         "nombre": "Chocotorta",
         "valor": 1400,
-        "imagen": "../assets/img/chocotorta.jpg"
+        "imagen": "./assets/img/chocotorta.jpg"
     },
     {
         "id": 3,
         "categoria" : "1",
         "nombre": "Pastafrola",
         "valor": 1200,
-        "imagen": "../assets/img/pastafrola.jpg"
+        "imagen": "./assets/img/pastafrola.jpg"
     },
     {
         "id": 4,
         "categoria" : "1",
         "nombre": "Rogel",
         "valor": 1500,
-        "imagen": "../assets/img/rogel.jpg"
+        "imagen": "./assets/img/rogel.jpg"
     },
     {
         "id": 5,
         "categoria" : "2",
         "nombre": "Ganache",
         "valor": 1300,
-        "imagen": "../assets/img/tarta_ganache.jpg"
+        "imagen": "./assets/img/tarta_ganache.jpg"
     },
     {
         "id": 6,
         "categoria" : "2",
         "nombre": "Lemon Pie",
         "valor": 1500,
-        "imagen": "../assets/img/lemon-pie.jpg"
+        "imagen": "./assets/img/lemon-pie.jpg"
     },
     {
         "id": 7,
         "categoria" : "2",
         "nombre": "Tarta de Manzana",
         "valor": 1200,
-        "imagen": "../assets/img/tarta_de_manzana.jpg"
+        "imagen": "./assets/img/tarta_de_manzana.jpg"
     },
     {
         "id": 8,
         "categoria" : "2",
         "nombre": "Tarta de Frutilla",
         "valor": 1300,
-        "imagen": "../assets/img/tarta_de_frutilla.jpg"
+        "imagen": "./assets/img/tarta_de_frutilla.jpg"
     },
     {
         "id": 9,
         "categoria" : "3",
         "nombre": "Budín de Vainilla y Chips",
         "valor": 800,
-        "imagen": "../assets/img/BUDIN-DE-VAINILLA.jpg"
+        "imagen": "./assets/img/BUDIN-DE-VAINILLA.jpg"
     },
     {
         "id": 10,
         "categoria" : "3",
         "nombre": "Budín Marmolado",
         "valor": 800,
-        "imagen": "../assets/img/budin_marmolado.jpg"
+        "imagen": "./assets/img/budin_marmolado.jpg"
     },
     {
         "id": 11,
         "categoria" : "3",
         "nombre": "Budín de Limón",
         "valor": 1500,
-        "imagen": "../assets/img/budin_limon.jpg"
+        "imagen": "./assets/img/budin_limon.jpg"
     },
     {
         "id": 12,
