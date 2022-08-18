@@ -80,62 +80,62 @@
         "categoria" : "3",
         "nombre": "Pan de Campo",
         "valor": 700,
-        "imagen": "../assets/img/pan_de_campo.jpg"
+        "imagen": "./assets/img/pan_de_campo.jpg"
     },
     {
         "id": 13,
         "categoria" : "3",
         "nombre": "Caja de Macarons",
         "valor": 1900,
-        "imagen": "../assets/img/macarons-de-chocolate.jpg"
+        "imagen": "./assets/img/macarons-de-chocolate.jpg"
     },
     {
         "id": 14,
         "categoria" : "3",
         "nombre": "Mini Alfajores Bañados",
         "valor": 1500,
-        "imagen": "../assets/img/alfajores.jpg"
+        "imagen": "./assets/img/alfajores.jpg"
     },
     {
         "id": 15,
         "categoria" : "3",
         "nombre": "Cuadrados Dulces",
         "valor": 1500,
-        "imagen": "../assets/img/Cuadrados_dulce.jpg"
+        "imagen": "./assets/img/Cuadrados_dulce.jpg"
     },
     {
         "id": 16,
         "categoria" : "3",
         "nombre": "Bombones Rellenos",
         "valor": 1500,
-        "imagen": "../assets/img/bombones_rellenos.jpg"
+        "imagen": "./assets/img/bombones_rellenos.jpg"
     },
     {
         "id": 17,
         "categoria" : "4",
         "nombre": "Cookies sin TACC",
         "valor": 1500,
-        "imagen": "../assets/img/cookies-sin-gluten.jpg"
+        "imagen": "./assets/img/cookies-sin-gluten.jpg"
     },
     {
         "id": 18,
         "categoria" : "4",
         "nombre": "Brownies sin TACC",
         "valor": 1500,
-        "imagen": "../assets/img/brownie_sinTACC.jpg"
+        "imagen": "./assets/img/brownie_sinTACC.jpg"
     },
     {
         "id": 19,
         "categoria" : "4",
         "nombre": "Muffins sin TACC",
         "valor": 1500,
-        "imagen": "../assets/img/Muffin_chocolatesinTACC.jpg"
+        "imagen": "./assets/img/Muffin_chocolatesinTACC.jpg"
     },
     {
         "id": 20,
         "categoria" : "4",
         "nombre": "Mini Tortas sin TACC",
         "valor": 1500,
-        "imagen": "../assets/img/mini_tortas_sinTACC.jpg"
+        "imagen": "./assets/img/mini_tortas_sinTACC.jpg"
     }             
 ]
